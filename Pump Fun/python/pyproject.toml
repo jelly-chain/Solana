@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jellychain-pumpfun-sdk"
+version = "1.0.0"
+description = "JellyChain SDK for launching, buying back, locking, and claiming fees on Pump.fun (Solana)"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+  { name = "JellyChain", email = "dev@jellychain.fun" }
+]
+keywords = ["solana", "pumpfun", "pump.fun", "jellychain", "sdk", "defi", "meme-coin", "bonding-curve"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+]
+requires-python = ">=3.10"
+dependencies = [
+  "httpx>=0.27.0",
+  "solders>=0.21.0",
+  "solana>=0.35.0",
+  "anchorpy>=0.20.0",
+  "construct-typing>=0.5.2",
+  "base58>=2.1.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-asyncio>=0.23.0",
+  "mypy>=1.10.0",
+]
+
+[project.urls]
+Homepage = "https://jellychain.fun/docs"
+Documentation = "https://jellychain.fun/docs"
+Repository = "https://github.com/jelly-chain/pumpfun-sdk"
+Terminal = "https://terminal.jellychain.fun"
+Issues = "https://github.com/jelly-chain/pumpfun-sdk/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jellychain_pumpfun"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
